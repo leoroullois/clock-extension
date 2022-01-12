@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { sessionAction } from "../redux/Session/action";
 const style = {
 	display: "flex",
-	margin: "30px auto",
+	margin: "20px auto",
 	flexDirection: "column",
 	justifyContent: "center",
-	height: "120px",
+	height: "auto",
 	width: "200px",
 	borderRadius: "6px",
 	border: "1px solid black",
@@ -38,7 +38,7 @@ class Presentational extends React.Component {
 				>
 					{this.props.length.inBreak ? "Break" : "Session"}
 				</p>
-				<div style={{ fontSize: "2.5em", fontWeight: "bold" }} id='time-left'>
+				<div style={{ fontSize: "2em", fontWeight: "bold",marginBottom:"10px" }} id='time-left'>
 					{/* {Math.floor(seconds / 60) < 10
 						? "0" + Math.floor(seconds / 60)
 						: Math.floor(seconds / 60)}

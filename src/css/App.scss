@@ -12,12 +12,12 @@ body {
 .App {
 	display: flex;
 	flex-direction: column;
-    width: 700px;
-    padding: 20px 30px;
+    width: 500px;
+	height: auto;
+    padding: 0px 30px;
     margin: 0 auto;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	height: auto;
 	background-color: $main-blue;
 	color: $light-white;
 	.length-container {

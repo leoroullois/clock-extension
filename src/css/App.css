@@ -19,13 +19,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 700px;
-  padding: 20px 30px;
+  width: 500px;
+  height: auto;
+  padding: 0px 30px;
   margin: 0 auto;
   border-radius: 6px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: auto;
   background-color: #273c75;
   color: #f5f6fa;
 }
