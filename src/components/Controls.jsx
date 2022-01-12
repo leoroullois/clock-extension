@@ -1,6 +1,11 @@
 import React from "react";
 import { playAction, pauseAction, resetAction } from "../redux/Controls/action";
 import { connect } from "react-redux";
+import {
+	IoCaretForwardCircleOutline,
+	IoPauseCircleOutline,
+	IoRefreshCircleOutline,
+} from "react-icons/io5";
 // Style CSS
 const style = {
 	display: "flex",
@@ -21,17 +26,17 @@ class Presentational extends React.Component {
 	}
 	tick() {
 		if (this.props.session.seconds === 0) {
-			const inBreak =this.props.length.inBreak;
+			const inBreak = this.props.length.inBreak;
 			document.querySelector("#beep").play();
 			if (inBreak) {
 				this.stopTimer();
 				this.props.session.seconds = this.props.length.sessionDuration;
-				this.props.length.inBreak= !inBreak;
+				this.props.length.inBreak = !inBreak;
 				this.setTimer();
 			} else {
 				this.stopTimer();
 				this.props.session.seconds = this.props.length.breakDuration;
-				this.props.length.inBreak= !inBreak;
+				this.props.length.inBreak = !inBreak;
 				this.setTimer();
 			}
 		} else {
@@ -74,8 +79,8 @@ class Presentational extends React.Component {
 		// ? Gère l'audio
 		const audioBip = document.querySelector("#beep");
 		audioBip.pause();
-		audioBip.currentTime=0;
-		
+		audioBip.currentTime = 0;
+
 		// ? Indique que le timer est arrêté
 		this.props.session.running = false;
 
@@ -89,23 +94,13 @@ class Presentational extends React.Component {
 		this.props.resetClock();
 	}
 	render() {
-		const start = (
-			<ion-icon onClick={this.handlePlay} name='play-circle-outline'></ion-icon>
-		);
-		const pause = (
-			<ion-icon
-				onClick={this.handlePause}
-				name='pause-circle-outline'
-			></ion-icon>
-		);
+		const start = <IoCaretForwardCircleOutline onClick={this.handlePlay} />;
+		const pause = <IoPauseCircleOutline onClick={this.handlePause} />;
 		return (
 			<section id='controls' style={style}>
 				<div id='start_stop'>{this.props.session.running ? pause : start}</div>
 				<div id='reset'>
-					<ion-icon
-						onClick={this.handleReset}
-						name='refresh-circle-outline'
-					></ion-icon>
+					<IoRefreshCircleOutline onClick={this.handleReset} />
 				</div>
 			</section>
 		);

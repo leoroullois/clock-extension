@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "../css/App.css";
 import { decrementAction, incrementAction } from "../redux/Length/action";
 import { sessionAction } from "../redux/Session/action";
-
+import { IoArrowDownOutline, IoArrowUpOutline } from "react-icons/io5";
 class Presentational extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,25 +46,17 @@ class Presentational extends React.Component {
 					{this.props.name} Length
 				</div>
 				<div className={"container"}>
-					<ion-icon
-						class={"decrement"}
+					<IoArrowDownOutline
+						className='icon decrement'
 						id={this.props.name + "-decrement"}
-						name='arrow-down-outline'
 						onClick={this.handleDecrement}
-					></ion-icon>
-
+					/>
 					<p id={this.props.name + "-length"}>
 						{this.props.name === "break"
 							? this.props.length.breakDuration / 60
 							: this.props.length.sessionDuration / 60}
 					</p>
-
-					<ion-icon
-						class={"increment"}
-						id={this.props.name + "-increment"}
-						name='arrow-up-outline'
-						onClick={this.handleIncrement}
-					></ion-icon>
+					<IoArrowUpOutline className="icon increment" id={this.props.name+"-increment"} onClick={this.handleIncrement}/>
 				</div>
 			</section>
 		);
