@@ -1,4 +1,4 @@
-# Welcome to my Drum Machine google chrome extension project !
+# Welcome to my 25+5 clock google chrome extension project !
 
 ## Setting up the extension.
 
